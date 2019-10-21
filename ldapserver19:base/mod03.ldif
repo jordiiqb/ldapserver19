@@ -1,0 +1,11 @@
+dn: cn=New,ou=usuaris,dc=edt,dc=org
+changetype: add
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: New
+sn: New
+uid: new
+uidNumber: 5051
+gidNumber: 10
+homeDirectory: C:\kaka
+

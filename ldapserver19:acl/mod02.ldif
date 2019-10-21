@@ -1,0 +1,17 @@
+dn: cn=Marta Mas,ou=usuaris,dc=edt,dc=org
+changetype: modify
+replace: homePhone
+homePhone: 888888888
+-
+add: mail
+mail: newmail@edt.org
+
+dn: cn=Jordi Mas,ou=usuaris,dc=edt,dc=org
+changetype: modify
+replace: homePhone
+homePhone: 888888888
+-
+add: mail
+mail: newmail@edt.org
+
+
