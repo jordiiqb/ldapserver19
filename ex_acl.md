@@ -16,9 +16,8 @@ olcAccess: to * by * read
 dn: olcDatabase={1}mdb,cn=config
 changetype: modify
 replace: olcAccess
-olcAccess: to * by dn.exact="cn=Anna Pou,ou=usuaris,dc=edt,dc=org" write
-olcAccess: to attrs="homePhone,mail" by self write
-olcAccess: to * by * read
+olcAccess: to attrs="homePhone,mail" by dn.exact="cn=Anna Pou,ou=usuarisdc=edt,dc=org" write by self write
+olcAccess: to * by dn.exact="cn=Anna Pou,ou=usuaris,dc=edt,dc=org" write by * read
 ```
 
 #### 3. Tot usuari es pot modificar el seu mail. Tothom pot veure totes les dades de tothom.
