@@ -5,8 +5,7 @@
 dn: olcDatabase={1}mdb,cn=config
 changetype: modify
 replace: olcAccess
-olcAccess: to * by dn.exact="cn=Anna Pou,ou=usuaris,dc=edt,dc=org" write
-olcAccess: to * by * read
+olcAccess: to * by dn.exact="cn=Anna Pou,ou=usuaris,dc=edt,dc=org" write by * read
 ```
 
 #### 2. L’usuari “Anna Pou” és ajudant d’administració. Tothom es pot modificar el seu propi email i homePhone. Tothom pot veure totes les dades de tothom.
@@ -16,7 +15,7 @@ olcAccess: to * by * read
 dn: olcDatabase={1}mdb,cn=config
 changetype: modify
 replace: olcAccess
-olcAccess: to attrs="homePhone,mail" by dn.exact="cn=Anna Pou,ou=usuarisdc=edt,dc=org" write by self write
+olcAccess: to attrs="homePhone,mail" by dn.exact="cn=Anna Pou,ou=usuarisdc=edt,dc=org" write by self write by * read
 olcAccess: to * by dn.exact="cn=Anna Pou,ou=usuaris,dc=edt,dc=org" write by * read
 ```
 
@@ -26,7 +25,7 @@ olcAccess: to * by dn.exact="cn=Anna Pou,ou=usuaris,dc=edt,dc=org" write by * re
 dn: olcDatabase={1}mdb,cn=config
 changetype: modify
 replace: olcAccess
-olcAccess: to attrs=mail by self write
+olcAccess: to attrs=mail by self write by * read
 olcAccess: to * by * read
 ```
 
@@ -77,8 +76,8 @@ dn: olcDatabase={1}mdb,cn=config
 changetype: modify
 replace: olcAccess
 olcAccess: to attrs=userPassword by dn.exact="cn=Pere Pou,ou=usuaris,dc=edt,dc=org" write by self write by * auth
-olcAccess: to attrs=mail by self write by * search
-olcAccess: to attrs=homePhone by self write by * search
-olcAccess: to *  by dn.exact="cn=Marta Mas,ou=usuasearchdc=edt,dc=org" writeby by self read
+olcAccess: to attrs=mail by dn.exact="cn=Marta Mas,ou=usuasearchdc=edt,dc=org" write by self write 
+olcAccess: to attrs=homePhone by dn.exact="cn=Marta Mas,ou=usuasearchdc=edt,dc=org" write by self write by * search
+olcAccess: to * by dn.exact="cn=Marta Mas,ou=usuasearchdc=edt,dc=org" write by by self read
 ```
 
