@@ -1,0 +1,35 @@
+attributetype ( 1.1.2.1.1 NAME 'x-matriculat'
+	DESC 'Estat de la matrícula'
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+	SINGLE-VALUE )
+
+attributetype ( 1.1.2.1.2 NAME 'x-nom'
+        DESC 'Nom de la persona matriculada'
+	EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+attributetype ( 1.1.2.1.3 NAME 'x-telefon'
+        DESC 'Telefon de la persona matriculada'
+        EQUALITY numericStringMatch
+	SUBSTR	numericStringSubstringsMatch
+	SYNTAX  1.3.6.1.4.1.1466.115.121.1.36
+        SINGLE-VALUE )
+
+attributetype ( 1.1.2.1.4 NAME 'x-web'
+        DESC 'Web de la persona matriculada'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+attributetype ( 1.1.2.1.5 NAME 'x-foto'
+        DESC 'Foto de la persona matriculada'
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )
+
+objectclass ( 1.1.2.2.1 NAME 'x-master'
+	DESC 'master universitari'
+	SUP TOP
+	AUXILIARY
+	MUST ( x-matriculat $ x-nom $ x-telefon $ x-web )
+	MAY x-foto )
+
