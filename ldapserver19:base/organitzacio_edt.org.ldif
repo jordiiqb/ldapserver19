@@ -20,4 +20,9 @@ ou: productes
 description: Container per a productes linux
 objectclass: organizationalunit
 
+dn: ou=usuaris,dc=edt,dc=org
+ou: usuaris
+description: Container per usuaris del sistema linux
+objectclass: organizationalunit
+
 

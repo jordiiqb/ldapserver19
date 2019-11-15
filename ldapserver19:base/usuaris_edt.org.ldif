@@ -1,15 +1,3 @@
-#dn: dc=edt,dc=org
-#dc: edt
-#description: Escola del treball de Barcelona
-#objectClass: dcObject
-#objectClass: organization
-#o: edt.org
-
-dn: ou=usuaris,dc=edt,dc=org
-ou: usuaris
-description: Container per usuaris del sistema linux
-objectclass: organizationalunit
-
 dn: cn=Pau Pou,ou=usuaris,dc=edt,dc=org
 objectclass: posixAccount
 objectclass: inetOrgPerson
@@ -105,5 +93,4 @@ uidNumber: 10
 gidNumber: 10
 homeDirectory: /tmp/home/admin
 userPassword: {SSHA}4mS0FycWc5bkpW8/a396SGNDTQUlFSX3
-
 
